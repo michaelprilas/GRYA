@@ -4,18 +4,6 @@ Aplikasi web kuis interaktif yang dirancang khusus untuk layar ponsel pintar (*s
 
 ---
 
-## 🔑 Kunci Jawaban Resmi: `2134`
-
-Berdasarkan urutan program pada poster:
-**Bedah Rumah ➔ FLPP ➔ RUSUN ➔ KPP**
-- **Rumah 2:** Bedah Rumah
-- **Rumah 1:** FLPP
-- **Rumah 3:** RUSUN
-- **Rumah 4:** KPP
-- 👉 **Kode Brankas:** `2134`
-
----
-
 ## ✨ Fitur-Fitur Utama
 
 1. **Desain Mobile-First & Atmosfer Detektif:**
