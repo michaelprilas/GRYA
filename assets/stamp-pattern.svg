@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect width="24" height="24" fill="#fbf8f1"/>
+  <!-- Top notch -->
+  <circle cx="12" cy="0" r="3.5" fill="#e8decb"/>
+  <!-- Bottom notch -->
+  <circle cx="12" cy="24" r="3.5" fill="#e8decb"/>
+  <!-- Left notch -->
+  <circle cx="0" cy="12" r="3.5" fill="#e8decb"/>
+  <!-- Right notch -->
+  <circle cx="24" cy="12" r="3.5" fill="#e8decb"/>
+</svg>

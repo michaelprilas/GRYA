@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Detektif Grya: Empat Pintu Satu Kode Rahasia</title>
+  
+  <!-- Favicon & PWA meta -->
+  <meta name="theme-color" content="#1a2530">
+  <meta name="description" content="Kuis Majalah Tim: Detektif Grya - Empat Pintu Satu Kode Rahasia. Edisi Filateli Pos Udara.">
+
+  <!-- Vintage & Philatelic Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Special+Elite&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons & Canvas Confetti & html2canvas -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="vintage-desk-bg">
+
+  <!-- Outer Airmail Envelope Frame -->
+  <div class="airmail-envelope-frame">
+    
+    <!-- Top Par Avion Banner -->
+    <div class="aerogramme-strip">
+      <span class="par-avion-badge">PAR AVION / AIR MAIL</span>
+      <span class="postal-dispatch-code">SURAT KILAT KHUSUS • NO. 084/GRYA/PKP</span>
+    </div>
+
+    <!-- Main Mobile Container -->
+    <main class="postal-main-card">
+
+      <!-- Washi Tape pinning the document -->
+      <div class="washi-tape-strip washi-top"></div>
+
+      <!-- Header: Vintage Postal Cancellation & Badge -->
+      <header class="philatelic-header">
+        
+        <!-- Postmark cancellation stamp in corner -->
+        <div class="postmark-decor">
+          <img src="assets/postmark-circle.svg" alt="Cap Pos Resmi" class="postmark-img">
+          <img src="assets/postmark-waves.svg" alt="Garis Gelombang" class="postmark-waves-img">
+        </div>
+
+        <!-- Secret Admin Trigger (Tap 5x on Logo) -->
+        <div class="header-logo-group" id="secretAdminTrigger" title="Ketuk 5x untuk menu admin panitia">
+          <img src="assets/badge_logo.png" alt="Logo Detektif Grya" class="stamp-logo-img">
+          <div class="header-title-text">
+            <h1 class="stamp-main-heading">EMPAT PINTU SATU KODE RAHASIA</h1>
+            <p class="stamp-sub-heading">Kuis Rubrik Majalah Edisi Merdeka Punya Rumah</p>
+          </div>
+        </div>
+
+        <!-- Action Helper Pills -->
+        <div class="postal-actions-row">
+          <button type="button" class="btn-postal-pill" id="btnOpenPoster">
+            <i data-lucide="image"></i> Lihat Poster Asli
+          </button>
+          <button type="button" class="btn-postal-pill pill-subtle" id="btnToggleClues">
+            <i data-lucide="file-text"></i> Catatan Petunjuk
+          </button>
+        </div>
+      </header>
+
+      <!-- Catatan Petunjuk / Clue Slip (Collapsible) -->
+      <section class="clue-accordion" id="clueAccordion" style="display: none;">
+        <div class="vintage-memo-slip">
+          <div class="memo-pin"></div>
+          <div class="memo-header">
+            <span class="memo-title">MEMO INVESTIGASI DETEKTIF</span>
+            <button type="button" class="btn-close-memo" id="btnCloseClues">&times;</button>
+          </div>
+          <div class="memo-body">
+            <p class="memo-intro">Pasangkan <strong>Ayu, Bima, Citra, Danu</strong> dengan 4 rumah dan kartu programnya: <strong>Bedah Rumah, FLPP, RUSUN, KPP</strong>.</p>
+            <ol class="memo-clues-list">
+              <li><strong>Rubrik Majalah:</strong> Danu memegang program I Wayan Sudarmo. Bima memegang program Pak Samin.</li>
+              <li>Bima berada di salah satu rumah paling ujung.</li>
+              <li>Kartu rusun tidak berada di rumah paling ujung.</li>
+              <li>Kartu Bedah Rumah tepat di sebelah kiri kartu rusun.</li>
+              <li>Citra tepat di sebelah kanan Ayu.</li>
+              <li>Rumah Citra dan Bima tidak berdampingan.</li>
+            </ol>
+            <div class="memo-target-note">
+              <span>SUSUNAN KODE RAHASIA:</span>
+              <div class="memo-seq-stamp">Bedah Rumah ➔ FLPP ➔ RUSUN ➔ KPP</div>
+              <small>Ganti nama program dengan nomor rumahnya untuk membuka brankas!</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERI 4 PRANGKO RUMAH KASUS (Collectible Stamp Row) -->
+      <section class="stamps-showcase-section">
+        <div class="stamps-ribbon-title">
+          <span>BERKAS 4 PRANGKO RUMAH KASUS</span>
+        </div>
+        <div class="stamps-grid-4">
+          
+          <!-- Prangko Rumah 1 -->
+          <div class="philatelic-mini-stamp stamp-color-1">
+            <div class="mini-stamp-perforation">
+              <span class="stamp-deno-badge">NO. 1</span>
+              <img src="assets/stamp_house1.jpg" alt="Rumah 1" class="mini-stamp-img">
+              <div class="stamp-caption-strip">RUMAH 01</div>
+            </div>
+          </div>
+
+          <!-- Prangko Rumah 2 -->
+          <div class="philatelic-mini-stamp stamp-color-2">
+            <div class="mini-stamp-perforation">
+              <span class="stamp-deno-badge">NO. 2</span>
+              <img src="assets/stamp_house2.jpg" alt="Rumah 2" class="mini-stamp-img">
+              <div class="stamp-caption-strip">RUMAH 02</div>
+            </div>
+          </div>
+
+          <!-- Prangko Rumah 3 -->
+          <div class="philatelic-mini-stamp stamp-color-3">
+            <div class="mini-stamp-perforation">
+              <span class="stamp-deno-badge">NO. 3</span>
+              <img src="assets/stamp_house3.jpg" alt="Rumah 3" class="mini-stamp-img">
+              <div class="stamp-caption-strip">RUMAH 03</div>
+            </div>
+          </div>
+
+          <!-- Prangko Rumah 4 -->
+          <div class="philatelic-mini-stamp stamp-color-4">
+            <div class="mini-stamp-perforation">
+              <span class="stamp-deno-badge">NO. 4</span>
+              <img src="assets/stamp_house4.jpg" alt="Rumah 4" class="mini-stamp-img">
+              <div class="stamp-caption-strip">RUMAH 04</div>
+            </div>
+          </div>
+
+        </div>
+        <p class="stamps-note">Tiap rumah ditempati 1 orang dan memegang 1 kartu program.</p>
+      </section>
+
+      <!-- Submission Form -->
+      <form id="quizForm" autocomplete="off">
+
+        <!-- ======================================================== -->
+        <!-- FORMULIR POS 1: IDENTITAS PENYELIDIK -->
+        <!-- ======================================================== -->
+        <section class="postal-form-sheet">
+          <div class="sheet-top-stamp">
+            <div class="stamp-box-seal">
+              <span>BERKAS</span>
+              <strong>POS 01</strong>
+            </div>
+            <div class="sheet-title-meta">
+              <h2>FORMULIR PENYELIDIK RESMI</h2>
+              <p>Wajib diisi lengkap untuk pengesahan & pengundian hadiah</p>
+            </div>
+          </div>
+
+          <div class="ledger-fields-group">
+            
+            <!-- Nama Lengkap -->
+            <div class="ledger-field">
+              <label for="fullName">
+                <span class="ledger-num">01.</span> NAMA LENGKAP PENYELIDIK: <span class="ink-star">*</span>
+              </label>
+              <div class="ledger-input-wrap">
+                <input type="text" id="fullName" name="fullName" placeholder="Ketik nama lengkap..." required>
+                <div class="ledger-dots-line"></div>
+              </div>
+            </div>
+
+            <!-- NIP -->
+            <div class="ledger-field">
+              <label for="nip">
+                <span class="ledger-num">02.</span> NIP (NOMOR INDUK PEGAWAI): <span class="ink-star">*</span>
+              </label>
+              <div class="ledger-input-wrap">
+                <input type="text" inputmode="numeric" id="nip" name="nip" placeholder="Contoh: 199001012015031001" required>
+                <div class="ledger-dots-line"></div>
+              </div>
+            </div>
+
+            <!-- Unit Organisasi -->
+            <div class="ledger-field">
+              <label for="orgUnit">
+                <span class="ledger-num">03.</span> UNIT ORGANISASI: <span class="ink-star">*</span>
+              </label>
+              <div class="ledger-input-wrap">
+                <input type="text" id="orgUnit" name="orgUnit" placeholder="Contoh: Ditjen Perumahan Perkotaan" required>
+                <div class="ledger-dots-line"></div>
+              </div>
+            </div>
+
+            <!-- Unit Kerja -->
+            <div class="ledger-field">
+              <label for="workUnit">
+                <span class="ledger-num">04.</span> UNIT KERJA: <span class="ink-star">*</span>
+              </label>
+              <div class="ledger-input-wrap">
+                <input type="text" id="workUnit" name="workUnit" placeholder="Contoh: BP3KP Jawa III / Biro Komunikasi Publik" required>
+                <div class="ledger-dots-line"></div>
+              </div>
+            </div>
+
+            <!-- Nomor WhatsApp -->
+            <div class="ledger-field">
+              <label for="whatsapp">
+                <span class="ledger-num">05.</span> NOMOR WHATSAPP (AKTIF): <span class="ink-star">*</span>
+              </label>
+              <div class="ledger-input-wrap">
+                <input type="tel" inputmode="tel" id="whatsapp" name="whatsapp" placeholder="Contoh: 081234567890" required>
+                <div class="ledger-dots-line"></div>
+              </div>
+            </div>
+
+            <!-- Username Instagram -->
+            <div class="ledger-field">
+              <label for="instagram">
+                <span class="ledger-num">06.</span> AKUN INSTAGRAM (UNTUK TAG): <span class="ink-star">*</span>
+              </label>
+              <div class="ledger-input-wrap">
+                <input type="text" id="instagram" name="instagram" placeholder="Contoh: @nama_kamu" required>
+                <div class="ledger-dots-line"></div>
+              </div>
+              <span class="ledger-hint">Akun yang digunakan untuk share story & tag @kementerianpkp</span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- FORMULIR POS 2: MISI STORY INSTAGRAM (@kementerianpkp) -->
+        <!-- ======================================================== -->
+        <section class="postal-form-sheet ig-postcard-section">
+          <div class="sheet-top-stamp">
+            <div class="stamp-box-seal seal-airmail">
+              <span>MISI</span>
+              <strong>POS 02</strong>
+            </div>
+            <div class="sheet-title-meta">
+              <h2>KARTU MISI INSTAGRAM STORY</h2>
+              <p>Wajib pasang preset & tag <mark class="pkp-mark">@kementerianpkp</mark></p>
+            </div>
+          </div>
+
+          <!-- Vintage Postal Preset Ticket -->
+          <div class="preset-ticket-wrapper">
+            <a href="https://bit.ly/preset-story-grya" target="_blank" rel="noopener noreferrer" class="postal-ticket-link" id="linkPresetIg">
+              <div class="ticket-stub-left">
+                <span class="ticket-series">PRESET</span>
+                <span class="ticket-num">#PKP</span>
+              </div>
+              <div class="ticket-body-right">
+                <div class="ticket-title-row">
+                  <i data-lucide="external-link"></i>
+                  <strong>KLIK UNTUK BUKA PRESET STORY</strong>
+                </div>
+                <p>Unduh template kuis resmi untuk Instagram Story</p>
+              </div>
+              <div class="ticket-perforated-divider"></div>
+            </a>
+          </div>
+
+          <!-- Misi Instruksi Telegram Style -->
+          <div class="telegram-dispatch-box">
+            <div class="dispatch-header">PETUNJUK DISPOSISI PENYELIDIK:</div>
+            <ul class="dispatch-steps">
+              <li><strong>1.</strong> Ambil preset dari tautan tiket di atas.</li>
+              <li><strong>2.</strong> Pasang template tersebut di Instagram Story pribadimu.</li>
+              <li><strong>3.</strong> <span class="must-tag-text">WAJIB TAG / MENTION: <span class="tag-bold">@kementerianpkp</span></span></li>
+              <li><strong>4.</strong> Tangkap layar (screenshot) story-mu, lalu tempelkan pada album di bawah ini:</li>
+            </ul>
+          </div>
+
+          <!-- Stamp Album Photo Mount Dropzone -->
+          <div class="stamp-mount-album" id="uploadDropzone">
+            <input type="file" id="storyImageInput" accept="image/*" class="file-input-hidden" required>
+            
+            <!-- Corner Brackets of Photo Mount Album -->
+            <div class="photo-corner corner-tl"></div>
+            <div class="photo-corner corner-tr"></div>
+            <div class="photo-corner corner-bl"></div>
+            <div class="photo-corner corner-br"></div>
+
+            <div class="mount-empty-state" id="dropzoneEmpty">
+              <div class="mount-stamp-icon">
+                <i data-lucide="camera"></i>
+              </div>
+              <p class="mount-main-label">TEMPELKAN BUKTI STORY DI SINI</p>
+              <p class="mount-sub-label">Ketuk untuk memilih foto dari galeri / jepret kamera HP</p>
+              <span class="mount-tag-reminder">Pastikan tag @kementerianpkp terlihat jelas</span>
+            </div>
+
+            <!-- Preview Mode -->
+            <div class="mount-preview-state" id="dropzonePreview" style="display: none;">
+              <div class="preview-polaroid">
+                <img src="" alt="Bukti Story" id="previewImg" class="preview-photo">
+                <div class="polaroid-caption">
+                  <span id="previewFileName">bukti-story.jpg</span>
+                  <div class="verified-rubber-stamp">TERLAMPIR</div>
+                </div>
+              </div>
+              <button type="button" class="btn-change-stamp" id="btnChangePhoto">
+                <i data-lucide="refresh-cw"></i> Ganti Foto Bukti
+              </button>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- FORMULIR POS 3: BRANKAS SANDI 4 PRANGKO PROGRAM -->
+        <!-- ======================================================== -->
+        <section class="postal-form-sheet safe-vault-section">
+          <div class="sheet-top-stamp">
+            <div class="stamp-box-seal seal-gold">
+              <span>SANDI</span>
+              <strong>POS 03</strong>
+            </div>
+            <div class="sheet-title-meta">
+              <h2>BRANKAS SANDI 4 PROGRAM</h2>
+              <p>Ganti program dengan nomor rumahnya (1, 2, 3, atau 4)</p>
+            </div>
+          </div>
+
+          <!-- Master Antique Brass Padlock SVG -->
+          <div class="antique-padlock-display">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" width="115" height="145" class="antique-lock-svg" id="lockVisual">
+              <defs>
+                <!-- Steel Shackle Cylindrical Metallic Gradient -->
+                <linearGradient id="steelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#334155"/>
+                  <stop offset="20%" stop-color="#64748b"/>
+                  <stop offset="45%" stop-color="#e2e8f0"/>
+                  <stop offset="70%" stop-color="#ffffff"/>
+                  <stop offset="85%" stop-color="#94a3b8"/>
+                  <stop offset="100%" stop-color="#1e293b"/>
+                </linearGradient>
+
+                <!-- Brass Body 3D Radiant Gradient -->
+                <linearGradient id="brassBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fde68a"/>
+                  <stop offset="25%" stop-color="#d97706"/>
+                  <stop offset="60%" stop-color="#b45309"/>
+                  <stop offset="90%" stop-color="#78350f"/>
+                  <stop offset="100%" stop-color="#451a03"/>
+                </linearGradient>
+
+                <!-- Brass Front Face Highlight -->
+                <radialGradient id="brassFaceHighlight" cx="45%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.9"/>
+                  <stop offset="40%" stop-color="#f59e0b" stop-opacity="0.6"/>
+                  <stop offset="80%" stop-color="#b45309" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#78350f" stop-opacity="1"/>
+                </radialGradient>
+
+                <!-- Rivet Dome Gradient -->
+                <radialGradient id="rivetGrad" cx="35%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#fef08a"/>
+                  <stop offset="50%" stop-color="#d97706"/>
+                  <stop offset="100%" stop-color="#451a03"/>
+                </radialGradient>
+
+                <!-- Keyhole Deep Shadow -->
+                <linearGradient id="keyholeCavity" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#0a0502"/>
+                  <stop offset="100%" stop-color="#261205"/>
+                </linearGradient>
+
+                <filter id="dropShad" x="-10%" y="-10%" width="130%" height="140%">
+                  <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.35"/>
+                </filter>
+              </defs>
+
+              <!-- SHACKLE (Moving Element) -->
+              <g id="lockShackle" class="shackle-group">
+                <path d="M 36 68 V 34 C 36 12, 84 12, 84 34 V 68" 
+                      fill="none" 
+                      stroke="url(#steelGrad)" 
+                      stroke-width="13" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round"/>
+                <rect x="78" y="52" width="8" height="5" rx="1" fill="#1e293b" opacity="0.8"/>
+              </g>
+
+              <!-- PADLOCK BODY -->
+              <g filter="url(#dropShad)" id="lockBodyGroup">
+                <!-- Outer Heavy Brass Bevel Silhouette -->
+                <path d="M 20 62 C 20 52, 28 46, 38 46 H 82 C 92 46, 100 52, 100 62 L 96 128 C 96 136, 88 142, 80 142 H 40 C 32 142, 24 136, 24 128 Z" 
+                      fill="url(#brassBody)"/>
+                
+                <!-- Inner Front Face -->
+                <path d="M 23 64 C 23 55, 30 50, 39 50 H 81 C 90 50, 97 55, 97 64 L 93 126 C 93 133, 86 138, 78 138 H 42 C 34 138, 27 133, 27 126 Z" 
+                      fill="url(#brassFaceHighlight)"/>
+
+                <!-- Decorative Engraved Border -->
+                <path d="M 27 66 C 27 60, 32 55, 41 55 H 79 C 88 55, 93 60, 93 66 L 89 123 C 89 128, 83 133, 76 133 H 44 C 37 133, 31 128, 31 123 Z" 
+                      fill="none" 
+                      stroke="#78350f" 
+                      stroke-width="1.2" 
+                      stroke-dasharray="3 2" 
+                      opacity="0.7"/>
+
+                <!-- Corner Brass Rivets (4 screws) -->
+                <circle cx="33" cy="62" r="3.5" fill="url(#rivetGrad)"/>
+                <circle cx="87" cy="62" r="3.5" fill="url(#rivetGrad)"/>
+                <circle cx="35" cy="124" r="3.5" fill="url(#rivetGrad)"/>
+                <circle cx="85" cy="124" r="3.5" fill="url(#rivetGrad)"/>
+
+                <!-- Center Engraved Cartouche Plaque -->
+                <rect x="35" y="66" width="50" height="16" rx="3" fill="#78350f" stroke="#fde68a" stroke-width="1"/>
+                <text x="60" y="78.5" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#fef08a" text-anchor="middle" letter-spacing="1.5">GRYA POS</text>
+
+                <!-- Antique Keyhole Plate -->
+                <circle cx="60" cy="98" r="15" fill="#5c2807" stroke="#fef08a" stroke-width="1"/>
+                <circle cx="60" cy="98" r="12" fill="#261205"/>
+
+                <!-- Keyhole Slot -->
+                <path d="M 57 96 A 3.5 3.5 0 1 1 63 96 L 63.5 105 A 2 2 0 0 1 56.5 105 Z" fill="url(#keyholeCavity)"/>
+                
+                <!-- Status Enamel Badge -->
+                <g id="lockStatusBadge">
+                  <rect x="36" y="116" width="48" height="14" rx="3" class="status-bg-pill" id="statusPillBg" fill="#991b1b" stroke="#fecaca" stroke-width="1"/>
+                  <text x="60" y="126.5" font-family="'Bebas Neue', sans-serif" font-size="9.5" fill="#ffffff" text-anchor="middle" letter-spacing="1" id="lockStatusText">TERKUNCI</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Urutan Program Berbingkai Prangko -->
+          <div class="program-order-banner">
+            <span class="order-title">URUTAN KUNCI PROGRAM:</span>
+            <div class="order-stamps-flex">
+              <span class="p-stamp-pill p-bsps">1. Bedah Rumah</span>
+              <span class="p-arrow">➔</span>
+              <span class="p-stamp-pill p-flpp">2. FLPP</span>
+              <span class="p-arrow">➔</span>
+              <span class="p-stamp-pill p-rusun">3. RUSUN</span>
+              <span class="p-arrow">➔</span>
+              <span class="p-stamp-pill p-kpp">4. KPP</span>
+            </div>
+          </div>
+
+          <!-- 4 Tumbler Prangko Digit -->
+          <div class="stamps-tumblers-block">
+            
+            <!-- Digit 0: Bedah Rumah -->
+            <div class="stamp-dial-unit unit-bsps">
+              <div class="dial-prog-label">Bedah Rumah</div>
+              <button type="button" class="dial-arrow-btn dial-up" data-digit-index="0" data-dir="1">▲</button>
+              <div class="dial-stamp-housing">
+                <input type="text" inputmode="numeric" maxlength="1" class="stamp-digit-input" id="digit0" data-index="0" placeholder="?" required>
+              </div>
+              <button type="button" class="dial-arrow-btn dial-down" data-digit-index="0" data-dir="-1">▼</button>
+              <div class="dial-sub-num">Digit 1</div>
+            </div>
+
+            <!-- Digit 1: FLPP -->
+            <div class="stamp-dial-unit unit-flpp">
+              <div class="dial-prog-label">FLPP</div>
+              <button type="button" class="dial-arrow-btn dial-up" data-digit-index="1" data-dir="1">▲</button>
+              <div class="dial-stamp-housing">
+                <input type="text" inputmode="numeric" maxlength="1" class="stamp-digit-input" id="digit1" data-index="1" placeholder="?" required>
+              </div>
+              <button type="button" class="dial-arrow-btn dial-down" data-digit-index="1" data-dir="-1">▼</button>
+              <div class="dial-sub-num">Digit 2</div>
+            </div>
+
+            <!-- Digit 2: RUSUN -->
+            <div class="stamp-dial-unit unit-rusun">
+              <div class="dial-prog-label">RUSUN</div>
+              <button type="button" class="dial-arrow-btn dial-up" data-digit-index="2" data-dir="1">▲</button>
+              <div class="dial-stamp-housing">
+                <input type="text" inputmode="numeric" maxlength="1" class="stamp-digit-input" id="digit2" data-index="2" placeholder="?" required>
+              </div>
+              <button type="button" class="dial-arrow-btn dial-down" data-digit-index="2" data-dir="-1">▼</button>
+              <div class="dial-sub-num">Digit 3</div>
+            </div>
+
+            <!-- Digit 3: KPP -->
+            <div class="stamp-dial-unit unit-kpp">
+              <div class="dial-prog-label">KPP</div>
+              <button type="button" class="dial-arrow-btn dial-up" data-digit-index="3" data-dir="1">▲</button>
+              <div class="dial-stamp-housing">
+                <input type="text" inputmode="numeric" maxlength="1" class="stamp-digit-input" id="digit3" data-index="3" placeholder="?" required>
+              </div>
+              <button type="button" class="dial-arrow-btn dial-down" data-digit-index="3" data-dir="-1">▼</button>
+              <div class="dial-sub-num">Digit 4</div>
+            </div>
+
+          </div>
+
+          <p class="safe-prompt-text">
+            Masukkan nomor rumah (1, 2, 3, atau 4) dari hasil deduksimu.
+          </p>
+
+          <!-- Typewriter Keypad (1-Thumb Quick Pad) -->
+          <div class="typewriter-quickpad">
+            <span class="pad-banner">PILIH CEPAT:</span>
+            <div class="typewriter-keys-row">
+              <button type="button" class="tw-key" data-val="1">1</button>
+              <button type="button" class="tw-key" data-val="2">2</button>
+              <button type="button" class="tw-key" data-val="3">3</button>
+              <button type="button" class="tw-key" data-val="4">4</button>
+              <button type="button" class="tw-key tw-del" id="padBackspace" title="Hapus"><i data-lucide="delete"></i></button>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SUBMIT BUTTON: WAX SEAL & STAMP SLAM -->
+        <!-- ======================================================== -->
+        <section class="postal-submit-area">
+          <button type="submit" class="btn-wax-seal" id="btnSubmit">
+            <div class="wax-seal-crest">
+              <i data-lucide="unlock"></i>
+            </div>
+            <div class="wax-seal-label">
+              <span class="wax-title">BUKA BRANKAS & KIRIM JAWABAN</span>
+              <span class="wax-sub">Pastikan data & bukti story sudah terunggah</span>
+            </div>
+          </button>
+        </section>
+
+      </form>
+
+      <!-- Vintage Postal Footer -->
+      <footer class="philatelic-footer">
+        <div class="footer-cancellation-block">
+          <img src="assets/postmark-circle.svg" alt="Cap Pos Akhir" class="footer-postmark">
+          <div class="footer-text-group">
+            <p class="footer-line-1">Detektif GRYA - Edisi Merdeka Punya Rumah</p>
+            <p class="footer-line-2">Kementerian Perumahan dan Kawasan Permukiman</p>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
+    <!-- Bottom Par Avion Strip -->
+    <div class="aerogramme-strip-bottom"></div>
+
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL 1: POSTER MAJALAH ZOOMABLE -->
+  <!-- ======================================================== -->
+  <div class="modal-backdrop" id="posterModal" style="display: none;">
+    <div class="modal-window poster-modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i data-lucide="image"></i>
+          <h3>Berkas Asli: Poster Majalah Detektif Grya</h3>
+        </div>
+        <button type="button" class="modal-close" id="btnClosePoster">&times;</button>
+      </div>
+      <div class="modal-body poster-body">
+        <div class="poster-zoom-wrapper" id="posterZoomWrapper">
+          <img src="assets/poster.jpg" alt="Poster Detektif Grya" class="poster-img" id="posterImg">
+        </div>
+      </div>
+      <div class="modal-footer poster-footer">
+        <span class="zoom-hint"><i data-lucide="zoom-in"></i> Ketuk gambar untuk perbesar</span>
+        <button type="button" class="btn-secondary" id="btnResetZoom">Reset Zoom</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL 2: SUCCESS / VICTORY (LEMBAR PRANGKO SOUVENIR RESMI) -->
+  <!-- ======================================================== -->
+  <div class="modal-backdrop success-backdrop" id="successModal" style="display: none;">
+    <div class="modal-window victory-sheet-window" id="victoryWindow">
+      
+      <!-- Stamped Seal Effect -->
+      <div class="solved-stamp" id="solvedStamp">
+        <img src="assets/verified-stamp.svg" alt="Kasus Terpecahkan" class="verified-stamp-svg">
+      </div>
+
+      <!-- COMMEMORATIVE SOUVENIR STAMP SHEET (Lembar Prangko Resmi) -->
+      <div class="souvenir-sheet-card" id="detectiveBadge">
+        
+        <!-- Scalloped Perforation of Souvenir Sheet -->
+        <div class="souvenir-perforated-frame">
+          
+          <div class="souvenir-header-row">
+            <div class="souvenir-kemen-tag">
+              <span class="kemen-flag">🇮🇩</span> KEMENTERIAN PERUMAHAN & KAWASAN PERMUKIMAN
+            </div>
+            <div class="souvenir-serial-num" id="badgeTicketId">#GRYA-0000</div>
+          </div>
+
+          <div class="souvenir-title-block">
+            <h2 class="souvenir-main-title">LEMBAR PRANGKO DETEKTIF RESMI</h2>
+            <p class="souvenir-case-name">EMPAT PINTU SATU KODE RAHASIA</p>
+          </div>
+
+          <!-- Detective Name Callout -->
+          <div class="detective-callout-box">
+            <span class="callout-lbl">NAMA PENYELIDIK:</span>
+            <div class="callout-name" id="badgeName">NAMA DETEKTIF</div>
+          </div>
+
+          <!-- Philatelic Details Grid -->
+          <div class="souvenir-meta-grid">
+            <div class="meta-cell">
+              <span class="m-lbl">NIP:</span>
+              <span class="m-val" id="badgeNip">-</span>
+            </div>
+            <div class="meta-cell">
+              <span class="m-lbl">UNIT:</span>
+              <span class="m-val" id="badgeOrg">-</span>
+            </div>
+            <div class="meta-cell">
+              <span class="m-lbl">UNIT KERJA:</span>
+              <span class="m-val" id="badgeWork">-</span>
+            </div>
+            <div class="meta-cell">
+              <span class="m-lbl">WHATSAPP:</span>
+              <span class="m-val" id="badgeWa">-</span>
+            </div>
+            <div class="meta-cell full-cell">
+              <span class="m-lbl">INSTAGRAM:</span>
+              <span class="m-val ig-val" id="badgeIg">-</span>
+            </div>
+          </div>
+
+          <!-- Stamped Secret Code Box -->
+          <div class="souvenir-code-display">
+            <span class="code-title-text">KODE RAHASIA TERPECAHKAN:</span>
+            <div class="code-digits-row" id="badgeCode">
+              <div class="code-stamp-box">2</div>
+              <div class="code-stamp-box">1</div>
+              <div class="code-stamp-box">3</div>
+              <div class="code-stamp-box">4</div>
+            </div>
+          </div>
+
+          <!-- Footer of Souvenir Sheet -->
+          <div class="souvenir-footer-line">
+            <span id="badgeTimestamp">Diverifikasi: 2026</span>
+            <span class="official-verified-pill">TAG @KEMENTERIANPKP VALID</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Server Sync Status -->
+      <div class="sync-status" id="syncStatus">
+        <i data-lucide="loader" class="spin"></i> Menyimpan jawaban ke arsip panitia...
+      </div>
+
+      <!-- Action buttons -->
+      <div class="victory-actions-group">
+        <button type="button" class="btn-action-stamp btn-download" id="btnDownloadBadge">
+          <i data-lucide="download"></i> Unduh Lembar Prangko Lencana (PNG)
+        </button>
+        <button type="button" class="btn-action-stamp btn-wa" id="btnShareWa">
+          <i data-lucide="share-2"></i> Pamerkan Bukti Kasus ke WhatsApp
+        </button>
+        <button type="button" class="btn-action-stamp btn-close-modal" id="btnCloseSuccess">
+          Tutup & Kembali
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL 3: ERROR / KODE SALAH -->
+  <!-- ======================================================== -->
+  <div class="modal-backdrop" id="errorModal" style="display: none;">
+    <div class="modal-window error-window">
+      <div class="error-stamp-seal">
+        <span>KODE SALAH</span>
+      </div>
+      <h3 class="error-title">Kombinasi Belum Tepat!</h3>
+      <p class="error-desc" id="errorDesc">
+        Gembok brankas pos masih terkunci rapat. Angka yang kamu masukkan belum cocok dengan urutan nomor rumah program <strong>Bedah Rumah ➔ FLPP ➔ RUSUN ➔ KPP</strong>.
+      </p>
+      <div class="error-tips-box">
+        <p><strong>💡 Catatan Investigasi:</strong></p>
+        <ul>
+          <li>Kartu Bedah Rumah tepat di sebelah kiri Rusun.</li>
+          <li>Rusun tidak berada di rumah paling ujung.</li>
+          <li>Citra tepat di sebelah kanan Ayu.</li>
+        </ul>
+      </div>
+      <button type="button" class="btn-action-stamp btn-retry" id="btnCloseError">
+        <i data-lucide="refresh-cw"></i> Periksa & Coba Lagi
+      </button>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL 4: ADMIN / SECRET CONFIG (TAP LOGO 5X) -->
+  <!-- ======================================================== -->
+  <div class="modal-backdrop" id="adminModal" style="display: none;">
+    <div class="modal-window admin-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i data-lucide="settings"></i>
+          <h3>Panel Rahasia Panitia Kuis</h3>
+        </div>
+        <button type="button" class="modal-close" id="btnCloseAdmin">&times;</button>
+      </div>
+      <div class="modal-body admin-body">
+        
+        <div class="admin-group">
+          <label for="adminCorrectCode">Kunci Jawaban 4-Digit (Bedah Rumah-FLPP-RUSUN-KPP):</label>
+          <input type="text" id="adminCorrectCode" maxlength="4" placeholder="Contoh: 2134">
+          <small>Kunci resmi saat ini: 2134.</small>
+        </div>
+
+        <div class="admin-group">
+          <label for="adminPresetUrl">Link Preset Instagram Story:</label>
+          <input type="url" id="adminPresetUrl" placeholder="https://bit.ly/preset-story-grya">
+          <small>Tautan Canva / Google Drive preset story kuis untuk peserta.</small>
+        </div>
+
+        <div class="admin-group">
+          <label for="adminSheetUrl">Google Apps Script Web App URL:</label>
+          <input type="url" id="adminSheetUrl" placeholder="https://script.google.com/macros/s/.../exec">
+          <small>Webhook dari spreadsheet Google Sheets Anda.</small>
+        </div>
+
+        <div class="admin-group checkbox-group">
+          <label>
+            <input type="checkbox" id="adminAcceptAny"> 
+            <strong>Mode Uji Coba:</strong> Terima semua kode sebagai benar
+          </label>
+        </div>
+
+        <div class="admin-stats">
+          <h4>Arsip Jawaban Tersimpan di Browser:</h4>
+          <p><strong id="localSubmissionsCount">0</strong> peserta telah mengirim jawaban.</p>
+          <div class="admin-btns-row">
+            <button type="button" class="btn-small" id="btnExportCsv">
+              <i data-lucide="file-spreadsheet"></i> Unduh Data (.CSV)
+            </button>
+            <button type="button" class="btn-small btn-danger" id="btnClearLocalData">
+              <i data-lucide="trash-2"></i> Hapus Cache
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-action-stamp btn-save-admin" id="btnSaveAdmin">
+          <i data-lucide="save"></i> Simpan Pengaturan
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

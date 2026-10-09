@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <circle cx="80" cy="80" r="74" fill="none" stroke="#8b261e" stroke-width="2.5" stroke-dasharray="1200" opacity="0.85"/>
+  <circle cx="80" cy="80" r="68" fill="none" stroke="#8b261e" stroke-width="1.2" opacity="0.75"/>
+  <circle cx="80" cy="80" r="48" fill="none" stroke="#8b261e" stroke-width="1" opacity="0.65"/>
+  <!-- Text along path or curved -->
+  <path id="curveTop" d="M 24 80 A 56 56 0 0 1 136 80" fill="none"/>
+  <path id="curveBottom" d="M 136 80 A 56 56 0 0 1 24 80" fill="none"/>
+  <text font-family="'Courier Prime', monospace" font-size="11" font-weight="bold" fill="#8b261e" letter-spacing="2" opacity="0.85">
+    <textPath href="#curveTop" startOffset="50%" text-anchor="middle">KORPS DETEKTIF GRYA</textPath>
+  </text>
+  <text font-family="'Courier Prime', monospace" font-size="10" font-weight="bold" fill="#8b261e" letter-spacing="1.5" opacity="0.85">
+    <textPath href="#curveBottom" startOffset="50%" text-anchor="middle">* KEMEN PKP *</textPath>
+  </text>
+  <!-- Center date & star -->
+  <text x="80" y="75" font-family="'Special Elite', cursive" font-size="13" font-weight="bold" fill="#8b261e" text-anchor="middle" opacity="0.9">RESMI</text>
+  <text x="80" y="92" font-family="monospace" font-size="10" fill="#8b261e" text-anchor="middle" opacity="0.85">2026.10.09</text>
+</svg>

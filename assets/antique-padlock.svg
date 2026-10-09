@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" width="120" height="150" class="antique-lock-svg">
+  <defs>
+    <!-- Steel Shackle Cylindrical Metallic Gradient -->
+    <linearGradient id="steelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="20%" stop-color="#64748b"/>
+      <stop offset="45%" stop-color="#e2e8f0"/>
+      <stop offset="70%" stop-color="#f8fafc"/>
+      <stop offset="85%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <!-- Brass Body 3D Radiant Gradient -->
+    <linearGradient id="brassBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="25%" stop-color="#d97706"/>
+      <stop offset="60%" stop-color="#b45309"/>
+      <stop offset="90%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+
+    <!-- Brass Front Face Highlight -->
+    <radialGradient id="brassFaceHighlight" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#f59e0b" stop-opacity="0.6"/>
+      <stop offset="80%" stop-color="#b45309" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#78350f" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Rivet Dome Gradient -->
+    <radialGradient id="rivetGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </radialGradient>
+
+    <!-- Keyhole Deep Shadow -->
+    <linearGradient id="keyholeCavity" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0502"/>
+      <stop offset="100%" stop-color="#261205"/>
+    </linearGradient>
+
+    <filter id="dropShad" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- SHACKLE (Moving Element) -->
+  <g id="lockShackleGroup" class="shackle-group">
+    <!-- Steel Shackle Tube -->
+    <path d="M 36 68 V 34 C 36 12, 84 12, 84 34 V 68" 
+          fill="none" 
+          stroke="url(#steelGrad)" 
+          stroke-width="13" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    <!-- Shackle Locking Notch on Right Side -->
+    <rect x="78" y="52" width="8" height="5" rx="1" fill="#1e293b" opacity="0.8"/>
+  </g>
+
+  <!-- PADLOCK BODY -->
+  <g filter="url(#dropShad)" id="lockBodyGroup">
+    <!-- Outer Heavy Brass Bevel Silhouette -->
+    <path d="M 20 62 C 20 52, 28 46, 38 46 H 82 C 92 46, 100 52, 100 62 L 96 128 C 96 136, 88 142, 80 142 H 40 C 32 142, 24 136, 24 128 Z" 
+          fill="url(#brassBody)"/>
+    
+    <!-- Inner Front Face -->
+    <path d="M 23 64 C 23 55, 30 50, 39 50 H 81 C 90 50, 97 55, 97 64 L 93 126 C 93 133, 86 138, 78 138 H 42 C 34 138, 27 133, 27 126 Z" 
+          fill="url(#brassFaceHighlight)"/>
+
+    <!-- Decorative Engraved Border -->
+    <path d="M 27 66 C 27 60, 32 55, 41 55 H 79 C 88 55, 93 60, 93 66 L 89 123 C 89 128, 83 133, 76 133 H 44 C 37 133, 31 128, 31 123 Z" 
+          fill="none" 
+          stroke="#78350f" 
+          stroke-width="1.2" 
+          stroke-dasharray="3 2" 
+          opacity="0.7"/>
+
+    <!-- Corner Brass Rivets (4 screws) -->
+    <circle cx="33" cy="62" r="3.5" fill="url(#rivetGrad)"/>
+    <circle cx="87" cy="62" r="3.5" fill="url(#rivetGrad)"/>
+    <circle cx="35" cy="124" r="3.5" fill="url(#rivetGrad)"/>
+    <circle cx="85" cy="124" r="3.5" fill="url(#rivetGrad)"/>
+
+    <!-- Center Engraved Cartouche Plaque -->
+    <rect x="35" y="66" width="50" height="16" rx="3" fill="#78350f" stroke="#fde68a" stroke-width="1"/>
+    <text x="60" y="78" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#fef08a" text-anchor="middle" letter-spacing="1.5">GRYA POS</text>
+
+    <!-- Antique Keyhole Plate -->
+    <circle cx="60" cy="98" r="15" fill="#5c2807" stroke="#fef08a" stroke-width="1"/>
+    <circle cx="60" cy="98" r="12" fill="#261205"/>
+
+    <!-- Keyhole Slot -->
+    <path d="M 57 96 A 3.5 3.5 0 1 1 63 96 L 63.5 105 A 2 2 0 0 1 56.5 105 Z" fill="url(#keyholeCavity)"/>
+    
+    <!-- Status Enamel Badge -->
+    <g id="lockStatusBadge">
+      <rect x="36" y="116" width="48" height="14" rx="3" class="status-bg-pill" fill="#991b1b" stroke="#fecaca" stroke-width="1"/>
+      <text x="60" y="126.5" font-family="'Bebas Neue', sans-serif" font-size="9.5" fill="#ffffff" text-anchor="middle" letter-spacing="1" id="svgStatusText">TERKUNCI</text>
+    </g>
+  </g>
+</svg>
